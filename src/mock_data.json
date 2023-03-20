@@ -1,0 +1,13 @@
+{
+  "bus_id": "25518",
+  "voltage": 138,
+  "owner": "Northern Indiana Public Service Co LLC",
+  "latitude": 41.494,
+  "longitude": -87.026,
+  "bus_name": "Flint Lake - 138 kV",
+  "mw_energy": 70,
+  "mw_capacity": 70,
+  "allocated_cost": 9780000,
+  "total_cost": 63720000,
+  "number_constraints": 4
+}
