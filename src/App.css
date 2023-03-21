@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
   background-color: #000000;
   min-height: 100vh;
@@ -6,34 +6,4 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.bus-dialog--header {
-  display: flex;
-  gap: 16px;
-}
-.bus-dialog--header-title-container {
-  width: 100%;
-}
-
-.bus-dialog--header-title {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bus-dialog--close {
-  justify-self: right;
-}
-
-.bus-dialog .bp4-tag {margin-right: 4px;}
-
-.bus-dialog th {
-  padding-top: 12px;
-  width: 50%;
-}
-
-.bus-dialog th,
-.bus-dialog td {
-  padding-left: 0;
-  text-align: left;
 }

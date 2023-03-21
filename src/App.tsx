@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import BusData from "./mock_data.json";
-import { BusInformationDialog } from "./Components/BusInformationDialog";
+import BusData from "./Mocks/mock_data.json";
+import {BusInformationDialog} from "./BusInformationDialog/BusInformationDialog";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app" data-testid="app-container">
       <BusInformationDialog {...BusData} />
     </div>
   );

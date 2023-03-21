@@ -8,6 +8,7 @@ import {
   Tag,
 } from "@blueprintjs/core";
 import { formatCurrency } from "../utils";
+import "./BusInformationDialog.css"
 
 interface BusInformationDialogProps {
   bus_id: string;
@@ -47,10 +48,17 @@ export const BusInformationDialog = (props: BusInformationDialogProps) => {
     <Dialog isOpen className="bus-dialog">
       <DialogBody>
         <div className="bus-dialog--header">
-          <Icon icon="ring" size={IconSize.LARGE} color={iconColor} />
+          <Icon
+            icon="ring"
+            size={IconSize.LARGE}
+            color={iconColor}
+            data-testid="bus-dialog-header-icon"
+          />
           <div className="bus-dialog--header-title-container">
             <div className="bus-dialog--header-title">
-              <h5 className="bp4-heading">{bus_name}</h5>
+              <h5 className="bp4-heading" data-testid="bus-dialog-name">
+                {bus_name}
+              </h5>
               <Button
                 icon="cross"
                 color="#5f6b7c"
@@ -59,14 +67,16 @@ export const BusInformationDialog = (props: BusInformationDialogProps) => {
                 onClick={handleClose}
               />
             </div>
-            <Tag round>{mw_energy} MWE</Tag>
-            <span className="bp4-tag bp4-intent-primary bp4-round">
+            <Tag round data-testid="bus-dialog-mwe">
+              {mw_energy} MWE
+            </Tag>
+            <Tag round intent="primary" data-testid="bus-dialog-mwc">
               {mw_capacity} MWC
-            </span>
+            </Tag>
           </div>
         </div>
 
-        <table>
+        <table data-testid="bus-dialog-table">
           <thead>
             <tr>
               <th>Triggered constraints</th>
@@ -75,15 +85,21 @@ export const BusInformationDialog = (props: BusInformationDialogProps) => {
           <tbody>
             <tr>
               <td className="bp4-text-disabled">Allocated cost</td>
-              <td>{formatCurrency(allocated_cost)}</td>
+              <td data-testid="bus-dialog-allocated-cost">
+                {formatCurrency(allocated_cost)}
+              </td>
             </tr>
             <tr>
               <td className="bp4-text-disabled">Total cost</td>
-              <td>{formatCurrency(total_cost)}</td>
+              <td data-testid="bus-dialog-total-cost">
+                {formatCurrency(total_cost)}
+              </td>
             </tr>
             <tr>
               <td className="bp4-text-disabled">Number of constraints</td>
-              <td>{number_constraints} constraints</td>
+              <td data-testid="bus-dialog-constraints">
+                {number_constraints} constraints
+              </td>
             </tr>
           </tbody>
           <thead>
@@ -94,19 +110,19 @@ export const BusInformationDialog = (props: BusInformationDialogProps) => {
           <tbody>
             <tr>
               <td className="bp4-text-disabled">Bus ID</td>
-              <td>{bus_id}</td>
+              <td data-testid="bus-dialog-bus-id">{bus_id}</td>
             </tr>
             <tr>
               <td className="bp4-text-disabled">Voltage</td>
-              <td>{voltage}</td>
+              <td data-testid="bus-dialog-voltage">{voltage}</td>
             </tr>
             <tr>
               <td className="bp4-text-disabled">Owner</td>
-              <td>{owner}</td>
+              <td data-testid="bus-dialog-owner">{owner}</td>
             </tr>
             <tr>
               <td className="bp4-text-disabled">Coordinates</td>
-              <td>
+              <td data-testid="bus-dialog-coordinates">
                 ({latitude}, {longitude})
               </td>
             </tr>
